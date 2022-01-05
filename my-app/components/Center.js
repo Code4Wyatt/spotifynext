@@ -5,6 +5,7 @@ import { shuffle } from "lodash";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { playlistIdState, playlistState } from "../atoms/playlistAtom";
 import useSpotify from "../hooks/useSpotify";
+import Songs from "../components/Songs";
 
 const colors = [
   "from-indigo-500",
@@ -35,6 +36,7 @@ function Center() {
       })
       .catch((error) => console.log("An error has occurred: ", err));
   }, [spotifyApi, playlistId]);
+  
   return (
     <div className="flex-grow">
       <header className="absolute top-5 right-8">
@@ -61,6 +63,10 @@ function Center() {
           <h1 className="text-2xl md:text-3xl xl:text-5xl">{playlist?.name}</h1>
         </div>
       </section>
+
+      <div>
+          <Songs />
+      </div>
     </div>
   );
 }
