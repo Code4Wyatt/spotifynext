@@ -14,7 +14,7 @@ const scopes = [
     "user-read-currently-playing",
     "user-read-recently-played",
     "user-follow-read",
-].join(',');
+].join(' ');
 
 const params = {
     scope: scopes,
